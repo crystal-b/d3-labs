@@ -2,16 +2,18 @@
 <html>
 	<head>
 		<script type="text/javascript">
-		//javascript goes here
+		//javascript code goes here
 		//executed first
 		</script>
 
 		<script type="text/javascript">
-		//javascript goes here
+		//javascript code goes here
 		//executed second
 		</script>
 
 		<script type="text/javascript" src="http://example.com/external.js">
+		//^src parameter lets you load an external js file
+		//^the browser ignores anything in this script block and only focuses on the src
 		// Javascript can also be loaded from files, either on your own server, or on someone elses.
 		//Note that any code in this script block will be IGNORED because of the src attribute
 		</script>
@@ -19,7 +21,11 @@
 
 <body>
 
-<div id="main"></div>
+<div id="main">
+	<!-- ^the first 3 script blocks can't see this div yet. the page loads sequentially.
+	solution 1: place all scripts at the end of the page
+	solution 2: tell scripts to run once the page has loaded -->
+</div>
 
 <script type="text/javascript">
 //javascript goes here
